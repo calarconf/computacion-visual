@@ -1,0 +1,1 @@
+- Se va corriendo cada cuadro de código para ver como va creando las figuras, y en las últimas los gifs que quedan en la memoria del colab para verlos.

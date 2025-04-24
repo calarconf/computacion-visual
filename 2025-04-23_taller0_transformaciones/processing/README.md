@@ -1,0 +1,1 @@
+- Solo se tiene que correr el sketch en processing para ver el resultado

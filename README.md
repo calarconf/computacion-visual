@@ -1,1 +1,1 @@
-# 2025-04-15_taller1_transformaciones
+Al objeto se la carga el script y se corre en el entorno de unity
