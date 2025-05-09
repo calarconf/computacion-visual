@@ -1,26 +1,43 @@
-import { useEffect } from 'react';
+import { Canvas } from '@react-three/fiber'
+import { OrbitControls, Edges, Points } from '@react-three/drei'
+import {Model} from './Components/Model.jsx'
+import { useState } from 'react'
 
-import * as THREE from 'three';
-import SceneInit from './Components/SceneInit';
-
-function App() {
-  useEffect(() => {
-    const test = new SceneInit('myThreeJsCanvas');
-    test.initialize();
-    test.animate();
-
-    const boxGeometry = new THREE.BoxGeometry(16, 16, 16);
-    const boxMaterial = new THREE.MeshNormalMaterial();
-    const boxMesh = new THREE.Mesh(boxGeometry, boxMaterial);
-
-    test.scene.add(boxMesh);
-  }, []);
+export default function App() {
+  const [showWireframe, setShowWireframe] = useState(false)
+  const [showEdges, setShowEdges] = useState(false)
+  const [showPoints, setShowPoints] = useState(false)
 
   return (
-    <div>
-      <canvas id="myThreeJsCanvas" />
-    </div>
-  );
-}
+    <>
+      <Canvas camera={{ position: [5, 5, 5] }}>
+        <ambientLight intensity={0.5} />
+        <pointLight position={[10, 10, 10]} />
+        
+        <Model 
+          showWireframe={showWireframe}
+          showEdges={showEdges}
+          showPoints={showPoints}
+        />
+        
+        <OrbitControls />
+        <gridHelper args={[10, 10]} />
+      </Canvas>
 
-export default App;
+      <div className="controls">
+        <label>
+          <input type="checkbox" checked={showWireframe} onChange={(e) => setShowWireframe(e.target.checked)} />
+          Wireframe
+        </label>
+        <label>
+          <input type="checkbox" checked={showEdges} onChange={(e) => setShowEdges(e.target.checked)} />
+          Edges
+        </label>
+        <label>
+          <input type="checkbox" checked={showPoints} onChange={(e) => setShowPoints(e.target.checked)} />
+          Points
+        </label>
+      </div>
+    </>
+  )
+}
