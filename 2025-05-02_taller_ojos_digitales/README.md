@@ -113,7 +113,7 @@ Describe exactamente lo que hiciste tú:
 
 ## ✅ Checklist de Entrega
 
-- [x] Carpeta `YYYY-MM-DD_nombre_taller`
+- [x] Carpeta `2025-05-02_taller_ojos_digitales`
 - [x] Código limpio y funcional
 - [x] Visualizaciones o métricas exportadas
 - [x] README completo y claro
