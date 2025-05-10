@@ -26,7 +26,7 @@ Lista los principales conceptos aplicados:
 Entornos usados:
 
 - Python (`cv2`, `matplotlib`.)
-- Jupyter / Google Colab
+-  Google Colab
 
 ---
 

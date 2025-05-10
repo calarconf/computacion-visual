@@ -24,7 +24,7 @@ Lista los principales conceptos aplicados:
 Especifica los entornos usados:
 
 - Python (`opencv-python`, `numpy`, `matplotlib`)
-- Jupyter / Google Colab
+- Google Colab
 
 
 
