@@ -7,10 +7,7 @@ export default function Model() {
   return (
     <primitive 
       object={scene} 
-      scale={[2, 2, 2]} // Ajusta según necesidad
-      position={[0, -1, 0]} // Centra en Y si es necesario
-      rotation={[0, Math.PI/2, 0]} // Rotación opcional
-      
+      scale={[2, 2, 2]} // Ajusta según necesidad      
     />
 
   )
