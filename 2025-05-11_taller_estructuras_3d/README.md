@@ -138,12 +138,11 @@ edge_trace = go.Scatter3d(
 
 ## 📊 Resultados Visuales
 
+### 📌  GIF animado en threejs y python respectivamente:
 
-### Gif del modelo 3D en three js
-![Demostración modelo 3D en three js resaltando principalmente las aristas y vertices](./threejs/public/DemostracionDodecaedroModelo3D.gif)
-### Gif del modelo 3D en colab
-![Demostración modelo 3D en Colab resaltando principalmente las aristas y los vertices](./python/DemostracionDodecaedroModelo3DPython.gif)
+![Demostación funcionamiento de modelo 3D en threejs para resaltar vertices y aristas](/2025-05-11_taller_estructuras_3d/threejs/public/DemostracionDodecaedroModelo3D.gif)
 
+![Demostación funcionamiento de modelo 3D en colab para resaltar vertices y aristas](/2025-05-11_taller_estructuras_3d/python/DemostracionDodecaedroModelo3DPython.gif)
 
 
 ---
