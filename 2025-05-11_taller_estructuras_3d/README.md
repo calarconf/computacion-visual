@@ -132,7 +132,7 @@ edge_trace = go.Scatter3d(
     name='Aristas'
 )
 ``` 
-```
+
 
 ---
 
