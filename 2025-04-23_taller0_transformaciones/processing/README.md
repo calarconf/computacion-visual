@@ -1,13 +1,13 @@
-# 🧪 Nombre del Taller
+# 🧪 Transformaciones Básicas en Computación Visual
 
 ## 📅 Fecha
-`YYYY-MM-DD` – Fecha de entrega o realización
+`2025-04-23` – Fecha de realización
 
 ---
 
 ## 🎯 Objetivo del Taller
 
-Describe brevemente el objetivo del taller: ¿qué se pretende explorar, aplicar o construir?
+En este taller se tiene como objetivo explorar los conceptos fundamentales de transformaciones geométricas (traslación, rotación y escala) en distintos entornos de programación, en este caso en el entorno de Processing.
 
 ---
 
@@ -16,11 +16,6 @@ Describe brevemente el objetivo del taller: ¿qué se pretende explorar, aplicar
 Lista los principales conceptos aplicados:
 
 - [ ] Transformaciones geométricas (escala, rotación, traslación)
-- [ ] Segmentación de imágenes
-- [ ] Shaders y efectos visuales
-- [ ] Entrenamiento de modelos IA
-- [ ] Comunicación por gestos o voz
-- [ ] Otro: _______________________
 
 ---
 
@@ -28,26 +23,23 @@ Lista los principales conceptos aplicados:
 
 Especifica los entornos usados:
 
-- Python (`opencv-python`, `torch`, `mediapipe`, `diffusers`, etc.)
-- Unity (versión LTS, XR Toolkit, Shader Graph)
-- Three.js / React Three Fiber
-- Jupyter / Google Colab
+- Processing (Java)
 
-📌 Usa las herramientas según la [guía de instalación oficial](./guia_instalacion_entornos_visual.md)
 
 ---
 
 ## 📁 Estructura del Proyecto
 
 ```
-YYYY-MM-DD_nombre_taller/
-├── entorno/               # python/, unity/, threejs/, colab/
-├── datos/                 # imágenes, audio, modelos, video
-├── resultados/            # capturas, métricas, gifs
-├── README.md
+2025-04-23_taller0_transformaciones/
+├── processing/
+  ├──sketch_250422b.pde      # Java
+  ├──README.md               
+├── python/                 # python, colab
+├── threejs/            # react, threejs
+├── unity/              # C#, unity
 ```
 
-📎 Sigue la estructura de entregas descrita en la [guía GitLab](./guia_gitlab_computacion_visual.md)
 
 ---
 
@@ -56,43 +48,34 @@ YYYY-MM-DD_nombre_taller/
 Explica el proceso:
 
 ### 🔹 Etapas realizadas
-1. Preparación de datos o escena.
-2. Aplicación de modelo o algoritmo.
-3. Visualización o interacción.
+1. Preparación de escena y cración de cubo.
+2. Aplicación de transformaciones.
+3. Visualización.
 4. Guardado de resultados.
 
 ### 🔹 Código relevante
 
 Incluye un fragmento que resuma el corazón del taller:
 
-```python
-# Segmentación semántica con DeepLab
-output = model(input_tensor)['out']
-prediction = output.argmax(1).squeeze().cpu().numpy()
+```java
+  // Aplicamos transformaciones al cubo
+  pushMatrix(); // Aislamos las transformaciones
+  
+  // Traslación ondulada usando sin() y frameCount
+  float waveX = sin(frameCount * 0.05) * 150;
+  float waveY = cos(frameCount * 0.03) * 100;
+  translate(waveX, waveY, 0);
 ```
 
 ---
 
 ## 📊 Resultados Visuales
 
-### 📌 Este taller **requiere explícitamente un GIF animado**:
-
-> ✅ Si tu taller lo indica, debes incluir **al menos un GIF** mostrando la ejecución o interacción.
-
-- Usa `Peek`, `ScreenToGif`, `OBS`, o desde Python (`imageio`) para generar el GIF.
-- **El nombre del GIF debe ser descriptivo del punto que estás presentando.**
-- Ejemplo correcto:  
-  `deteccion_colores_rojo_verde_torres.gif`  
-  `movimiento_robot_esquiva_obstaculos_gomez.gif`  
-  `shader_gradiente_temporal_lopez.gif`
-
-🧭 [Ver guía para crear GIFs](./guia_generar_gif.md)
+### 📌 GIF animado**:
 
 ```markdown
-![deteccion](./resultados/deteccion_colores_rojo_verde_torres.gif)
+![Demostración del funcionamiento del cubo en processing](./DemostracionCuboProcessing.gif)
 ```
-
-> ❌ No se aceptará la entrega si falta el GIF en talleres que lo requieren.
 
 ---
 
@@ -101,11 +84,9 @@ prediction = output.argmax(1).squeeze().cpu().numpy()
 Enumera los prompts utilizados:
 
 ```text
-"Create a photorealistic image of a robot painting a mural using Stable Diffusion"
-"Segment a car and a person using SAM at point (200, 300)"
+"Como crear un cubo en processing"
+"Como genero una animación sinosoidal del cubo"
 ```
-
-📎 Usa buenas prácticas de prompts según la [guía de IA actualizada](./guia_prompts_inteligencias_artificiales_actualizada.md)
 
 ---
 
@@ -113,27 +94,27 @@ Enumera los prompts utilizados:
 
 Responde en 2-3 párrafos:
 
-- ¿Qué aprendiste o reforzaste con este taller?
-- ¿Qué parte fue más compleja o interesante?
-- ¿Qué mejorarías o qué aplicarías en futuros proyectos?
+- ¿Qué aprendiste o reforzaste con este taller? A hacer un programa sencillo en processing
+- ¿Qué parte fue más compleja o interesante? Crear una de mis primeras animaciones
+- ¿Qué mejorarías o qué aplicarías en futuros proyectos? Una figura más compleja
 
 ---
 
-## 👥 Contribuciones Grupales (si aplica)
+## 👥 Contribuciones 
 
 Describe exactamente lo que hiciste tú:
 
 ```markdown
-- Programé el detector de postura en MediaPipe
+- Programé el cubo
 - Generé los GIFs y documentación
-- Integré el control de voz con visualización en Unity
+- Integré el control generado por modelos de IA para la animación
 ```
 
 ---
 
 ## ✅ Checklist de Entrega
 
-- [x] Carpeta `YYYY-MM-DD_nombre_taller`
+- [x] Carpeta `2025-04-23_taller0_transformaciones`
 - [x] Código limpio y funcional
 - [x] GIF incluido con nombre descriptivo (si el taller lo requiere)
 - [x] Visualizaciones o métricas exportadas
