@@ -15,7 +15,7 @@ En este taller se tiene como objetivo explorar los conceptos fundamentales de tr
 
 Lista los principales conceptos aplicados:
 
-- [ ] Transformaciones geométricas (escala, rotación, traslación)
+- [x] Transformaciones geométricas (escala, rotación, traslación)
 
 ---
 
@@ -23,7 +23,7 @@ Lista los principales conceptos aplicados:
 
 Especifica los entornos usados:
 
-- Processing (Java)
+- Visual Studio Code (Three js fiber)
 
 
 ---
@@ -32,12 +32,14 @@ Especifica los entornos usados:
 
 ```
 2025-04-23_taller0_transformaciones/
-├── processing/
-  ├──sketch_250422b.pde      # Java
-  ├──DemostracionCuboProcessing.gif # Gif
-  ├──README.md               
+├── processing/           
 ├── python/                 # python, colab
 ├── threejs/            # react, threejs
+  ├──node_modules     # NPM
+  ├──Public
+     ├──demostracionTrianguloThreejs.gif # Gif
+  ├── src             # Código fuente
+  ├──README.md    
 ├── unity/              # C#, unity
 ```
 
@@ -49,23 +51,38 @@ Especifica los entornos usados:
 Explica el proceso:
 
 ### 🔹 Etapas realizadas
-1. Preparación de escena y cración de cubo.
-2. Aplicación de transformaciones.
-3. Visualización.
-4. Guardado de resultados.
+1. Crear proyecto en threejs fiber.
+2. Crear componente EsferaAnimada.jsx.
+3. Generar código para animación en ap.jsx.
+4. Visualizar en localhost y grabar gifs de resultados.
 
 ### 🔹 Código relevante
 
 Incluye un fragmento que resuma el corazón del taller:
 
-```java
-  // Aplicamos transformaciones al cubo
-  pushMatrix(); // Aislamos las transformaciones
+```js
+export function EsferaAnimada() {
+  const meshRef = useRef()
+  const scaleFactor = useRef(1)
   
-  // Traslación ondulada usando sin() y frameCount
-  float waveX = sin(frameCount * 0.05) * 150;
-  float waveY = cos(frameCount * 0.03) * 100;
-  translate(waveX, waveY, 0);
+  useFrame(({ clock }) => {
+    if (!meshRef.current) return
+    
+    const time = clock.elapsedTime
+    
+    // 1. Movimiento senoidal
+    meshRef.current.position.x = Math.sin(time) * 3
+    meshRef.current.position.y = Math.cos(time * 0.5) * 2
+    
+    // 2. Rotación
+    meshRef.current.rotation.x += 0.01
+    meshRef.current.rotation.y += 0.005
+    
+    // 3. Escalado pulsante
+    scaleFactor.current = 1 + Math.sin(time * 2) * 0.2
+    meshRef.current.scale.setScalar(scaleFactor.current)
+  })
+
 ```
 
 ---
@@ -74,7 +91,7 @@ Incluye un fragmento que resuma el corazón del taller:
 
 ### 📌 GIF animado**:
 
-![Demostración del funcionamiento del cubo en processing](./DemostracionCuboProcessing.gif)
+![Demostración del funcionamiento de la esfera animada en threejs](./2025-04-22_threejs_interactive_ui/public/DemostracionEsferaThreejs.gif)
 
 ---
 
@@ -83,8 +100,8 @@ Incluye un fragmento que resuma el corazón del taller:
 Enumera los prompts utilizados:
 
 ```text
-"Como crear un cubo en processing"
-"Como genero una animación sinosoidal del cubo"
+"Como crear una esfera en threejs"
+"Como animar esta esfera en threejs"
 ```
 
 ---
@@ -93,9 +110,9 @@ Enumera los prompts utilizados:
 
 Responde en 2-3 párrafos:
 
-- ¿Qué aprendiste o reforzaste con este taller? A hacer un programa sencillo en processing
-- ¿Qué parte fue más compleja o interesante? Crear una de mis primeras animaciones
-- ¿Qué mejorarías o qué aplicarías en futuros proyectos? Una figura más compleja
+- ¿Qué aprendiste o reforzaste con este taller? A crear una esfera usando threejs fiber
+- ¿Qué parte fue más compleja o interesante? Crear la animación de la esfera
+- ¿Qué mejorarías o qué aplicarías en futuros proyectos? Cargar un modelo
 
 ---
 
@@ -104,7 +121,7 @@ Responde en 2-3 párrafos:
 Describe exactamente lo que hiciste tú:
 
 ```markdown
-- Programé el cubo
+- Programé la esfera
 - Generé los GIFs y documentación
 - Integré el control generado por modelos de IA para la animación
 ```
