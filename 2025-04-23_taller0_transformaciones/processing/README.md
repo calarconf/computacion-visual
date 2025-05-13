@@ -15,7 +15,7 @@ En este taller se tiene como objetivo explorar los conceptos fundamentales de tr
 
 Lista los principales conceptos aplicados:
 
-- [ ] Transformaciones geométricas (escala, rotación, traslación)
+- [x] Transformaciones geométricas (escala, rotación, traslación)
 
 ---
 
