@@ -34,6 +34,7 @@ Especifica los entornos usados:
 2025-04-23_taller0_transformaciones/
 ├── processing/
   ├──sketch_250422b.pde      # Java
+  ├──DemostracionCuboProcessing.gif # Gif
   ├──README.md               
 ├── python/                 # python, colab
 ├── threejs/            # react, threejs
@@ -73,9 +74,7 @@ Incluye un fragmento que resuma el corazón del taller:
 
 ### 📌 GIF animado**:
 
-```markdown
 ![Demostración del funcionamiento del cubo en processing](./DemostracionCuboProcessing.gif)
-```
 
 ---
 
