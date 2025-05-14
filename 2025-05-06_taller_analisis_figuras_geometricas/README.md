@@ -35,10 +35,12 @@ Link colab: https://colab.research.google.com/drive/1pYdc-8INPegcn9utKibaHVEWuGG
 
 ```
 2025-05-06_taller_analisis_figuras_geometricas/
-├── entorno/               # python/
-colab/
-├── datos/                 # imágenes 
-├── Imágenes/            # capturas, métricas
+├── python/               # python/
+    ├──colab/
+├── image-1.png/                 # imágenes 
+├── image-2.png/                 # imágenes 
+├── image.png/                 # imágenes 
+├── DemostracionTallerAnalisisFiguras/                 # Gif 
 ├── README.md
 ```
 
@@ -95,6 +97,10 @@ for i, contour in enumerate(contours):
 ![alt text](image-1.png)
 ![alt text](image-2.png)
 
+### 📌 GIF animado sobre demostración en Colab:
+
+
+![Demotración taller](./DemostracionTallerAnalisisFiguras.gif)
 
 ---
 
