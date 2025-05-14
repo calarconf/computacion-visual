@@ -28,7 +28,8 @@ Especifica los entornos usados:
 - Three.js / React Three Fiber
 -  Google Colab
 
-
+link colab:
+https://colab.research.google.com/drive/171FtgAH0S4gOUHKsThCPBEMVeRPw9qaJ?usp=sharing
 ---
 
 ## 📁 Estructura del Proyecto

@@ -26,6 +26,7 @@ Especifica los entornos usados:
 - Python (`numpy`, `trimesh`, `vedo`, `matplotlib`.)
 - Three.js / React Three Fiber (`Edges`, `OrbitControls`, `drei`)
 - Google Colab
+Link colab: https://colab.research.google.com/drive/1WA_DMD0XWzRQJzG9s5QyVCvghiOk4a-M?usp=sharing
 
 ---
 

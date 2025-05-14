@@ -27,7 +27,7 @@ Entornos usados:
 
 - Python (`cv2`, `matplotlib`.)
 -  Google Colab
-
+link colab: https://colab.research.google.com/drive/1Xz36VqphZ1_FmBfJBVjIy2YGAYODbRBX?usp=sharing
 ---
 
 ## 📁 Estructura del Proyecto

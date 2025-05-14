@@ -26,6 +26,7 @@ Especifica los entornos usados:
 - Python (`opencv-python`, `numpy`, `matplotlib`)
 - Google Colab
 
+link colab: https://colab.research.google.com/drive/1W8FbDiRPu9YQ9NESKe8RaSOXq6o44QnU?usp=sharing
 
 
 ---

@@ -24,8 +24,8 @@ Lista los principales conceptos aplicados:
 Especifica los entornos usados:
 
 - Colab (Python)
-
-
+link colab:
+https://colab.research.google.com/drive/1sufd8x8ohhrXHqmaNsTaLYDQ9IrbYuPy?usp=sharing
 ---
 
 ## 📁 Estructura del Proyecto
