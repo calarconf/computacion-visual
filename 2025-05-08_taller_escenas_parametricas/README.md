@@ -1,13 +1,12 @@
-# 🧪 Nombre del Taller
+# 🧪 Escenas Paramétricas: Creación de Objetos desde Datos
 
 ## 📅 Fecha
-`YYYY-MM-DD` – Fecha de entrega o realización
-
+`2025-05-13` – Fecha de entrega 
 ---
 
 ## 🎯 Objetivo del Taller
 
-Describe brevemente el objetivo del taller: ¿qué se pretende explorar, aplicar o construir?
+El objetivo de este taller es generar objetos 3D de manera programada a partir de listas de coordenadas o datos estructurados. El objetivo es crear geometría en tiempo real y de forma flexible.
 
 ---
 
@@ -15,12 +14,9 @@ Describe brevemente el objetivo del taller: ¿qué se pretende explorar, aplicar
 
 Lista los principales conceptos aplicados:
 
-- [ ] Transformaciones geométricas (escala, rotación, traslación)
-- [ ] Segmentación de imágenes
-- [ ] Shaders y efectos visuales
-- [ ] Entrenamiento de modelos IA
-- [ ] Comunicación por gestos o voz
-- [ ] Otro: _______________________
+- [x] Transformaciones geométricas (escala, rotación, traslación)
+- [x] Estructuras adaptativas
+- [x] Parametrización dinámica
 
 ---
 
@@ -28,71 +24,144 @@ Lista los principales conceptos aplicados:
 
 Especifica los entornos usados:
 
-- Python (`opencv-python`, `torch`, `mediapipe`, `diffusers`, etc.)
-- Unity (versión LTS, XR Toolkit, Shader Graph)
+- Python (`vedo`, `trimesh`, `open3d`, `numpy`.)
 - Three.js / React Three Fiber
-- Jupyter / Google Colab
+-  Google Colab
 
-📌 Usa las herramientas según la [guía de instalación oficial](./guia_instalacion_entornos_visual.md)
 
 ---
 
 ## 📁 Estructura del Proyecto
 
 ```
-YYYY-MM-DD_nombre_taller/
-├── entorno/               # python/, unity/, threejs/, colab/
-├── datos/                 # imágenes, audio, modelos, video
-├── resultados/            # capturas, métricas, gifs
+2025-05-13_taller_escenas_parametricas/
+├── python/               # python/
+    ├── Taller9.ipynb       #colab
+    ├──DemostraciónEscenaParametricaPy.gif  #gif
+├── threejs/
+    ├── taller9Three
+        ├──node_modules       # threejs
+        ├──public             # gif
+        ├──src                # codigo fuente
 ├── README.md
 ```
 
-📎 Sigue la estructura de entregas descrita en la [guía GitLab](./guia_gitlab_computacion_visual.md)
 
 ---
 
 ## 🧪 Implementación
 
-Explica el proceso:
+Explica el proceso python:
 
 ### 🔹 Etapas realizadas
-1. Preparación de datos o escena.
-2. Aplicación de modelo o algoritmo.
-3. Visualización o interacción.
-4. Guardado de resultados.
+1. Instalar todas las dependencias.
+2. Crear figuras 3D en la malla.
+3. Variar parametros de las figuras.
+4. Exportar los objetos generados.
 
+Explica el proceso threejs:
+
+### 🔹 Etapas realizadas
+1. Crear proyecto en threejs.
+2. Crear componentes Scene.jsx y Shapes.jsx.
+3. Crear el componente AdaptativeStructures.jsx e implemntar leva.
+4. Aplicar la lógica en App.jsx.
 ### 🔹 Código relevante
 
 Incluye un fragmento que resuma el corazón del taller:
 
 ```python
-# Segmentación semántica con DeepLab
-output = model(input_tensor)['out']
-prediction = output.argmax(1).squeeze().cpu().numpy()
+# Exportar escena completa como GLTF (corregido)
+escena_completa = merge(vedo_objects)  # Combinar todos los objetos
+write(escena_completa, f"{export_dir}escena_completa.gltf")
+
+# Visualización
+show(escena_completa,
+     axes=14,
+     viewup='z',
+     title="Escena Exportada",
+     bg="white",
+     bg2="lightblue",
+     interactive=True)
+```
+``` js
+const AdaptiveStructures = memo(({
+  gridSize,
+  scaleFactor,
+  noiseIntensity,
+  colorA,
+  colorB,
+  structureType
+}) => {
+  const noise = new Noise(Math.random())
+  
+  return (
+    <group>
+      {Array.from({ length: gridSize * gridSize }).map((_, i) => {
+        // Calcular posición en grid
+        const x = (i % gridSize) - gridSize/2
+        const z = Math.floor(i / gridSize) - gridSize/2
+        
+        // Generar altura con noise
+        const height = noise.simplex2(x * 0.5, z * 0.5) * noiseIntensity
+        
+        // Determinar tipo de estructura
+        const isCube = structureType === 'mixed' 
+          ? Math.random() > 0.5 
+          : structureType === 'cubes'
+        
+        // Color interpolado
+        const colorMix = `hsl(${
+          (Math.abs(height) * 30 + 180) % 360
+        }, 70%, 60%)`
+
+        return (
+          <mesh
+            key={i}
+            position={[
+              x * 2.5, 
+              Math.max(0, height), 
+              z * 2.5
+            ]}
+            scale={[
+              scaleFactor,
+              scaleFactor + Math.abs(height),
+              scaleFactor
+            ]}
+          >
+            {isCube ? (
+              <boxGeometry args={[1, 1, 1]} />
+            ) : (
+              <sphereGeometry args={[0.5, 16, 16]} />
+            )}
+            
+            <meshStandardMaterial 
+              color={height > 0 ? colorA : colorB}
+              metalness={height * 0.2}
+              roughness={1 - Math.abs(height) * 0.3}
+            />
+          </mesh>
+        )
+      })}
+    </group>
+  )
+})
 ```
 
 ---
 
 ## 📊 Resultados Visuales
 
-### 📌 Este taller **requiere explícitamente un GIF animado**:
+### 📌 GIF animado sobre demostración en Colab:
 
-> ✅ Si tu taller lo indica, debes incluir **al menos un GIF** mostrando la ejecución o interacción.
 
-- Usa `Peek`, `ScreenToGif`, `OBS`, o desde Python (`imageio`) para generar el GIF.
-- **El nombre del GIF debe ser descriptivo del punto que estás presentando.**
-- Ejemplo correcto:  
-  `deteccion_colores_rojo_verde_torres.gif`  
-  `movimiento_robot_esquiva_obstaculos_gomez.gif`  
-  `shader_gradiente_temporal_lopez.gif`
+![deteccion](./python/DemostracionEscenaParametricaPy.gif)
 
-🧭 [Ver guía para crear GIFs](./guia_generar_gif.md)
+### 📌 GIF animado sobre demostración en Threejs:
 
-```markdown
-![deteccion](./resultados/deteccion_colores_rojo_verde_torres.gif)
-```
 
-> ❌ No se aceptará la entrega si falta el GIF en talleres que lo requieren.
+![deteccion](./threejs/taller9Three/public/DemostracionEscenaParametricaThree.gif)
+
 
 ---
 
@@ -101,11 +170,14 @@ prediction = output.argmax(1).squeeze().cpu().numpy()
 Enumera los prompts utilizados:
 
 ```text
-"Create a photorealistic image of a robot painting a mural using Stable Diffusion"
-"Segment a car and a person using SAM at point (200, 300)"
+"Crear una lista de coordenas para definir puntos 3D en el espacio y crea figuras primitivas ahí"
+"Usa bucles y condicionales para variar los parametrios de esas figuras"
+"Exportas estas figuras como archivos .OBJ, .STL o .GLTF"
+"Crea una escena y crea un array de objetos 3D"
+"Parametriza su posición, escala, color y rotación"
+"Con map representa estructuras adaptativas"
 ```
 
-📎 Usa buenas prácticas de prompts según la [guía de IA actualizada](./guia_prompts_inteligencias_artificiales_actualizada.md)
 
 ---
 
@@ -113,9 +185,9 @@ Enumera los prompts utilizados:
 
 Responde en 2-3 párrafos:
 
-- ¿Qué aprendiste o reforzaste con este taller?
-- ¿Qué parte fue más compleja o interesante?
-- ¿Qué mejorarías o qué aplicarías en futuros proyectos?
+- ¿Qué aprendiste o reforzaste con este taller? A crear estructuras adaptativas
+- ¿Qué parte fue más compleja o interesante? No saber porque tenía problemas con las dependencias en python
+- ¿Qué mejorarías o qué aplicarías en futuros proyectos? Poder modificar la entrada sobre que figuras mostrar
 
 ---
 
@@ -124,9 +196,9 @@ Responde en 2-3 párrafos:
 Describe exactamente lo que hiciste tú:
 
 ```markdown
-- Programé el detector de postura en MediaPipe
+- Solucioné diferentes bugs que se presentaron en el desarrollo
 - Generé los GIFs y documentación
-- Integré el control de voz con visualización en Unity
+- Integré el código generado con modelos de IA
 ```
 
 ---

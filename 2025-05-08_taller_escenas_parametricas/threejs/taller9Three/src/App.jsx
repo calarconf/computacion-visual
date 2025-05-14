@@ -1,19 +1,14 @@
-import { Scene } from './components/Scene'
-import { ControlsPanel } from './components/UI/ControlsPanel'
-import { useSceneControls } from './hooks/useSceneControls'
-// import ControlsPanel from './components/UI/ControlsPanel' 
-import { Leva } from 'leva' 
+import { Canvas } from '@react-three/fiber'
+import Scene from './components/Scene'
 
-export default function App() {
-  const controls = useSceneControls()
+function App() {
   return (
-    <>
-      <Leva /> {/* Componente Leva raíz */}
-      <Canvas>
-        <ControlsPanel />
-        <Scene controls={controls} />
+    <div style={{ width: '100vw', height: '100vh' }}>
+      <Canvas camera={{ position: [10, 10, 10], fov: 75 }}>
+        <Scene />
       </Canvas>
-    </>
+    </div>
   )
-
 }
+
+export default App
