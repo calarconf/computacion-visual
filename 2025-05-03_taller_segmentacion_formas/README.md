@@ -105,7 +105,7 @@ for contour in contours:
 ### 📌 GIF animado sobre demostración en Colab:
 
 
-![deteccion](./DemostracionTallerSegmentacion.gif)
+![Demotracion taller](./DemostracionTallerSegmentacion.gif)
 
 ---
 

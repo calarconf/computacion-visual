@@ -84,7 +84,7 @@ sharpening_kernel = np.array([
 ### 📌 GIF animado sobre demostración en Colab:
 
 
-![deteccion](./DemostracionTallerOjosDigitales.gif)
+![Demostración taller](./DemostracionTallerOjosDigitales.gif)
 
 ## 🧩 Prompts Usados
 
