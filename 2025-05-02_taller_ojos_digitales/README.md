@@ -35,7 +35,11 @@ link colab: https://colab.research.google.com/drive/1Xz36VqphZ1_FmBfJBVjIy2YGAYO
 ```
 2025-05-02_taller_ojos_digitales/
 ├── python/               # python/
-colab/
+   ├── colab/
+├── image-1.png
+├── image-2.png
+├── image.png
+├── DemostracionTallerOjosDigitales.gif  
 ├── README.md
 ```
 
@@ -76,6 +80,11 @@ sharpening_kernel = np.array([
 ![alt text](image-1.png)
 ![alt text](image-2.png)
 
+
+### 📌 GIF animado sobre demostración en Colab:
+
+
+![deteccion](./DemostracionTallerOjosDigitales.gif)
 
 ## 🧩 Prompts Usados
 

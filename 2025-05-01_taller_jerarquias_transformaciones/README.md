@@ -1,4 +1,4 @@
-# 🧪 Nombre del Taller
+# 🧪 Jerarquías y Transformaciones: El Árbol del Movimiento
 
 ## 📅 Fecha
 `2025-05-01` – Fecha de realización
