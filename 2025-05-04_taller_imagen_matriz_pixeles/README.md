@@ -84,15 +84,15 @@ def adjust_manual(img, alpha=1.0, beta=0):
 ---
 
 ## 📊 Resultados Visuales
-![alt text](image.png)
-![alt text](image-1.png)
-![alt text](image-2.png)
-![alt text](image-3.png)
+![alt text](/2025-05-04_taller_imagen_matriz_pixeles/python/image-1.png)
+![alt text](/2025-05-04_taller_imagen_matriz_pixeles/python/image-2.png)
+![alt text](/2025-05-04_taller_imagen_matriz_pixeles/python/image-3.png)
+![alt text](/2025-05-04_taller_imagen_matriz_pixeles/python/image.png)
 
 ### 📌 GIF animado sobre demostración en Colab:
 
 
-![Demotración taller](./DemostracionTallerImagenMatriz.gif.gif)
+![Demotración taller](./DemostracionTallerImagenMatriz.gif)
 ---
 
 ## 🧩 Prompts Usados
