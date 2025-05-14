@@ -35,11 +35,13 @@ link colab: https://colab.research.google.com/drive/1W8FbDiRPu9YQ9NESKe8RaSOXq6o
 
 ```
 2025-05-03_taller_segmentacion_formas/
-├── entorno/               # python/, 
-colab/
-├── datos/                 # imágenes
- imágenes
-├── resultados/            # capturas y métricas
+├── python/               # python/, 
+    ├──colab/
+├── DemosatracionTallerSegmentacion.gif/                 # Gif
+├── image-3.png                 # capturas
+├── image-2.png                 # capturas
+├── image-1.png                 # capturas
+├── image.png                 # capturas
 ├── README.md
 ```
 
@@ -99,6 +101,11 @@ for contour in contours:
 ![alt text](image-1.png)
 ![alt text](image-2.png)
 ![alt text](image-3.png)
+
+### 📌 GIF animado sobre demostración en Colab:
+
+
+![deteccion](./DemostracionTallerSegmentacion.gif)
 
 ---
 
