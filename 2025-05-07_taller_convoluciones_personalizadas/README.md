@@ -34,10 +34,10 @@ Link colab: https://colab.research.google.com/drive/1LGq85W5SPljVhBrgeC8vzCKbNsx
 
 ```
 2025-05-07_taller_convoluciones_personalizadas/
-├── entorno/               # python/ 
-colab/
-├── imágenes/                 # imágenes
-├── resultados/            # capturas
+├── python/               # python/ 
+    ├──colab/
+├── image-1.png/                 # imágenes
+├── image.png/                 # imágenes
 ├── README.md
 ```
 
@@ -90,6 +90,8 @@ def convolucion2d(imagen, kernel):
 ## 📊 Resultados Visuales
 ![alt text](image.png)
 ![alt text](image-1.png)
+
+![Demotración taller](./DemostracionTallerConvoluciones.gif)
 
 ---
 
