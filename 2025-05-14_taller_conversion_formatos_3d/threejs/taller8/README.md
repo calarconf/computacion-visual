@@ -122,12 +122,12 @@ with open('scene_converted.ply', 'wb') as f:
 
 ### 📌 GIF animado del taller 8 en colab:
 
-![Demostración de los resultados del taller 8 en colab](./2025-05-14_taller_conversion_formatos_3d/threejs/taller8/public/DemostracionTaller8Colab.gif)
+![Demostración de los resultados del taller 8 en colab](./public/DemostracionTaller8Colab.gif)
 
 
 ### 📌 GIF animado del taller 8 en colab:
 
-![Demostración de los resultados del taller 8 en threejs](./2025-05-14_taller_conversion_formatos_3d/threejs/taller8/public/DemostracionTaller8Threejs.gif)
+![Demostración de los resultados del taller 8 en threejs](./public/DemostracionTaller8Threejs.gif)
 
 ---
 
